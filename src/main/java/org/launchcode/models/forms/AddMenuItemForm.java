@@ -7,10 +7,9 @@ import org.launchcode.models.Menu;
 import javax.validation.constraints.NotNull;
 
 public class AddMenuItemForm {
-
+    private Iterable <Cheese> cheeses;
     private Menu menu;
 
-    private Iterable <Cheese> cheeses;
 
     @NotNull
     private int cheeseId;
@@ -20,16 +19,13 @@ public class AddMenuItemForm {
 
 
 
-    public AddMenuItemForm(Menu menu, Iterable<Cheese> cheeses){
-        this.cheeses = cheeses;
+    public AddMenuItemForm() { }
+
+    public AddMenuItemForm(Menu menu, Iterable<Cheese> cheeses) {
         this.menu = menu;
-
+        this.cheeses = cheeses;
     }
 
-
-    public int getMenuId() {
-        return menuId;
-    }
 
     public int getCheeseId() {
         return cheeseId;
@@ -43,9 +39,14 @@ public class AddMenuItemForm {
         return cheeses;
     }
 
+    public int getMenuId() {
+        return menuId;
+    }
+
     public void setMenuId(int menuId) {
         this.menuId = menuId;
     }
+
 
     public void setCheeseId(int cheeseId) {
         this.cheeseId = cheeseId;
